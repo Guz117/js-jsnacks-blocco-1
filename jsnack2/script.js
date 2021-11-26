@@ -44,6 +44,9 @@ while (i < invitatiGatsby.length) {
 
 if (find) {
     console.log('Benvenuto alla festa');
+    document.getElementById('message').innerHTML = `Benvenuto alla festa`;
 } else {
-    console.log('Mi dispiace non è nella lista degli invitati')
+    console.log('Mi dispiace non è nella lista degli invitati');
+    document.getElementById('message').innerHTML = `Mi dispiace non è nella lista degli invitati`;
 }
+
