@@ -12,7 +12,7 @@ const invitatiGatsby = [
     'Elizabeth'
 ]
 
-const nomeInvitato = prompt('Inserisci il tuo nome');
+// const nomeInvitato = prompt('Inserisci il tuo nome');
 
 // let find = false;
 
@@ -32,21 +32,27 @@ const nomeInvitato = prompt('Inserisci il tuo nome');
 
 
 // Ciclo while
-let i = 0;
-let find = false;
-while (i < invitatiGatsby.length) {
-    const element = invitatiGatsby[i];
-    if (nomeInvitato.toLowerCase() == element.toLowerCase()) {
-        find = true;
-    } 
-    i++;
-}
+const inserisciNome = document.getElementById('name');
+const verifica = document.getElementById('verifica');
 
-if (find) {
-    console.log('Benvenuto alla festa');
-    document.getElementById('message').innerHTML = `Benvenuto alla festa`;
-} else {
-    console.log('Mi dispiace non è nella lista degli invitati');
-    document.getElementById('message').innerHTML = `Mi dispiace non è nella lista degli invitati`;
-}
+verifica.addEventListener('click',
+function () {
+    let i = 0;
+    let find = false;
+    while (i < invitatiGatsby.length) {
+        const element = invitatiGatsby[i];
+        if (inserisciNome.value.toLowerCase() == element.toLowerCase()) {
+            find = true;
+        } 
+        i++;
+    }
+    
+    if (find) {
+        console.log('Benvenuto alla festa');
+        document.getElementById('message').innerHTML = `Benvenuto alla festa`;
+    } else {
+        console.log('Mi dispiace non è nella lista degli invitati');
+        document.getElementById('message').innerHTML = `Mi dispiace non è nella lista degli invitati`;
+    }
+});
 
